@@ -14,3 +14,5 @@ end
 
 gem 'jquery-rails'
 
+gem 'exception_notification'
+gem 'letter_opener', group: :development

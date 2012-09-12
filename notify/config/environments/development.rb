@@ -27,4 +27,10 @@ Notify::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+	config.middleware.use ExceptionNotifier,
+		sender_address: 'dsilver@candidatemetrics.com',
+		exception_recipients: 'dsilver@candidatemetrics.com'
+
+	config.action_mailer.delivery_method = :letter_opener
 end
