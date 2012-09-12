@@ -30,7 +30,8 @@ Notify::Application.configure do
 
 	config.middleware.use ExceptionNotifier,
 		sender_address: 'dsilver@candidatemetrics.com',
-		exception_recipients: 'dsilver@candidatemetrics.com'
+		exception_recipients: 'dsilver@candidatemetrics.com',
+		ignore_exceptions: ExceptionNotifier.default_ignore_exceptions #+ [RuntimeError]
 
 	config.action_mailer.delivery_method = :letter_opener
 end
